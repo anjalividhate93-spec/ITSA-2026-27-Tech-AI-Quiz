@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ITSA 2026-27 Quiz</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="topbar"><div class="brand">ITSA <span>2026–27</span></div><div class="pill">TECH & AI QUIZ</div></div>
+<main class="student-wrap">
+  <section id="join" class="card hero">
+    <div class="eyebrow">INTER COLLEGE / ITSA EVENT</div>
+    <h1>Technology & AI Quiz</h1>
+    <p class="muted">30 questions · 40 seconds each · 2 marks per correct answer</p>
+    <div class="form">
+      <input id="name" maxlength="40" placeholder="Enter your full name">
+      <input id="className" maxlength="30" placeholder="Enter your class (e.g. FY IT A)">
+      <button id="joinBtn">Join Quiz</button>
+      <div id="joinError" class="error"></div>
+    </div>
+    <div class="note">Your questions are randomized. Students sitting together will not receive the same question order.</div>
+  </section>
+
+  <section id="waiting" class="card center hidden">
+    <div class="spinner"></div>
+    <h2>You're registered</h2>
+    <p id="welcome"></p>
+    <p class="muted">Please wait for the operator to start the quiz.</p>
+  </section>
+
+  <section id="quiz" class="hidden">
+    <div class="quiz-meta">
+      <div><span id="qNo">1</span> / <span id="qTotal">30</span></div>
+      <div class="timer"><span id="timer">40</span>s</div>
+    </div>
+    <div class="timerbar"><div id="timerFill"></div></div>
+    <div class="card question-card">
+      <div class="eyebrow">QUESTION</div>
+      <h2 id="questionText"></h2>
+      <div id="options" class="options"></div>
+    </div>
+    <div id="result" class="result hidden"></div>
+  </section>
+
+  <section id="finished" class="card center hidden">
+    <div class="check">✓</div>
+    <h2>Quiz completed</h2>
+    <p>Thank you for participating in the ITSA 2026–27 Technology & AI Quiz.</p>
+    <p class="muted">The final results will be announced by the operator.</p>
+  </section>
+</main>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/student.js"></script>
+</body>
+</html>
